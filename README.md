@@ -2,7 +2,7 @@
 
 Machine learning web app that predicts paddy yield (kg/ha) from farm inputs, fertilizer and weather data.
 
-**🔗 Live App:** YOUR-APP-LINK
+**🔗 Live App:** https://paddy-yieldprediction-xqbhzptay9mbcbta4vnh3d.streamlit.app/
 
 ## Project Details
 - Dataset: 2,789 farm records, 44 features (variety, soil, fertilizer, rainfall, temperature, humidity, etc.)
@@ -17,5 +17,5 @@ Machine learning web app that predicts paddy yield (kg/ha) from farm inputs, fer
 - `paddydataset.csv` - dataset
 
 ## Run locally
-pip install -r requirements.txt
-streamlit run app.py
+    pip install -r requirements.txt
+    streamlit run app.py
