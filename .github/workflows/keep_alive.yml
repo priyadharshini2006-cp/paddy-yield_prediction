@@ -1,0 +1,35 @@
+name: Keep Streamlit app awake
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Playwright
+        run: |
+          pip install playwright
+          playwright install --with-deps chromium
+      - name: Open the app
+        run: |
+          python - <<'EOF'
+          from playwright.sync_api import sync_playwright
+          URL = "https://paddy-yieldprediction-xqbhzptay9mbcbta4vnh3d.streamlit.app/"
+          with sync_playwright() as p:
+              b = p.chromium.launch()
+              page = b.new_page()
+              page.goto(URL, timeout=90000)
+              page.wait_for_timeout(10000)
+              btn = page.get_by_role("button", name="Yes, get this app back up!")
+              if btn.count() > 0:
+                  btn.first.click()
+                  page.wait_for_timeout(30000)
+              print("done")
+              b.close()
+          EOF
