@@ -1,0 +1,14 @@
+Test,Description,Predicted yield (kg/ha),Total yield (kg),Result
+T1,Typical farm (all defaults),6127.4,24509.6,PASS
+T2,High fertilizer (max Urea and Potash),6163.4,24653.7,PASS
+T3,Low fertilizer (min Urea and Potash),6000.5,24002.1,PASS
+T4,Variety = ponmani,6098.7,24394.9,PASS
+T5,Variety = delux ponni,6135.8,24543.4,PASS
+T6,Soil = clay,6132.9,24531.7,PASS
+T7,Nursery = wet,6134.6,24538.3,PASS
+T8,Agriblock = Panruti,6127.4,24509.6,PASS
+T9,Small farm (min hectares),6075.5,6075.5,PASS
+T10,Large farm (max hectares),6135.9,36815.4,PASS
+T11,All inputs at minimum,5789.9,5789.9,PASS
+T12,All inputs at maximum,5960.1,35760.5,PASS
+T13,Edge case: unseen Variety value,6130.9,24523.7,PASS
